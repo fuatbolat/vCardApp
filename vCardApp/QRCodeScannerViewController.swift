@@ -57,7 +57,7 @@ class QRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObje
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject, let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             
-            // QR verisini ayrıştır
+            // QR verisini ayrış
             parseQRCodeData(stringValue)
         }
 
@@ -75,7 +75,7 @@ class QRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObje
             }
         }
 
-        // Dijital kart ekranını göster
+        // Dijital kart
         if let name = userInfo["Name"], let number = userInfo["Number"], let email = userInfo["Email"] {
             let digitalCardVC = DigitalCardViewController()
             digitalCardVC.userName = name

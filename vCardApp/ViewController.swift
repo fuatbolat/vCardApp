@@ -44,8 +44,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     @IBAction func addPhotoButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .photoLibrary // Fotoğraf kütüphanesinden seçim yapacağız.
-                imagePicker.allowsEditing = false // Kullanıcının resmi düzenlemesine izin veriyoruz (isteğe bağlı)
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = false
                 
                 present(imagePicker, animated: true, completion: nil)
            
@@ -53,14 +53,14 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
            if let selectedImage = info[.originalImage] as? UIImage {
-               imageView.image = selectedImage // Seçilen resmi imageView'da gösteriyoruz
+               imageView.image = selectedImage
            }
-           picker.dismiss(animated: true, completion: nil) // Picker'ı kapat
+           picker.dismiss(animated: true, completion: nil)
        }
        
        // Kullanıcı resmi seçmeyi iptal ederse
        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-           picker.dismiss(animated: true, completion: nil) // Picker'ı kapat
+           picker.dismiss(animated: true, completion: nil) 
        }
     
     

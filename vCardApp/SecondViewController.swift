@@ -21,7 +21,7 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // UserDefaults'tan verileri al
+        
         let name = UserDefaults.standard.string(forKey: "userName") ?? "İsim bulunamadı"
         let number = UserDefaults.standard.string(forKey: "userNumber") ?? "Numara bulunamadı"
         let email = UserDefaults.standard.string(forKey: "userEmail") ?? "Email bulunamadı"
@@ -38,7 +38,7 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func qrButtonPressed(_ sender: Any) {
-        // Kullanıcı bilgilerini birleştir
+       
         let name = UserDefaults.standard.string(forKey: "userName") ?? "İsim bulunamadı"
         let number = UserDefaults.standard.string(forKey: "userNumber") ?? "Numara bulunamadı"
         let email = UserDefaults.standard.string(forKey: "userEmail") ?? "Email bulunamadı"
@@ -59,7 +59,7 @@ class SecondViewController: UIViewController {
         EMAIL:\(email)
         END:VCARD
         """
-        // QR kodu oluşturma fonksiyonu
+        // QR kodu
         func generateQRCode(from string: String) -> UIImage? {
             let data = string.data(using: .utf8)
             if let filter = CIFilter(name: "CIQRCodeGenerator") {
